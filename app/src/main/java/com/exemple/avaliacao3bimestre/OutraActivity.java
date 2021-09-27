@@ -53,34 +53,28 @@ public class OutraActivity extends AppCompatActivity {
 
             String Media;
             Media = String.valueOf(media);
-            //
 
-            // variaveis para armazenar os dados a serem enviados
-            // para a outra activity
-            String nome = "", nota1="", nota2="";
+
+            String nome = txtnome.getText().toString();
+            String nota1 = txtnota1.getText().toString();
+            String nota2 = txtnota2.getText().toString();
 
             // criando um Intent para inserir dados
             Intent i = new Intent();
 
-            // inserindo as informacoes no intent
+
             i.putExtra("nome", nome);
             i.putExtra("nota1", nota1);
             i.putExtra("nota2", nota2);
             i.putExtra("media",Media);
 
 
-
-            // definindo o resultado desta activity
-            // e indicando quem eh o intent com os dados
             setResult(RESULT_OK, i);
 
 
-            // "limpando" a interface, para a próxima digitação
-            txtnome.setText("");
-            txtnota1.setText("");
-            txtnota1.setText("");
 
-            // finalizando esta activity, voltando para a anterior
+
+            //  voltando para a anterior
             finish();
         }
     }
